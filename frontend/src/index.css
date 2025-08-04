@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  /* Color Palette */
+  --primary: hsl(205, 90%, 40%);
+  --primary: hsl(205, 90%, 40%);
+  --secondary: hsl(210, 10%, 50%);
+
+  --bg-dark: hsl(210, 30%, 8%);
+  --bg: hsl(210, 100%, 99%);
+  --bg-light: hsl(210, 100%, 100%);
+
+  --text: hsl(210, 10%, 20%);
+  --text-muted: hsl(210, 10%, 50%);
+  --text-white: hsl(0, 0%, 90%);
+
+  --highlight: hsl(205, 90%, 40%);
+  --border: hsl(210, 10%, 50%);
+  --border-muted: hsl(210, 10%, 15%);
+
+  /* Fonts */
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Merriweather", serif;
+}
+
+/* Tailwind Theming  */
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+
+  --color-bg: var(--bg);
+  --color-bg-dark: var(--bg-dark);
+  --color-bg-light: var(--bg-light);
+
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-white: var(--text-white);
+
+  --color-border: var(--border);
+  --color-border-muted: var(--border-muted);
+
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-heading);
+}
+
+@layer components {
+  .primary-btn {
+    @apply bg-primary text-sm text-text-white font-medium py-2 px-4 rounded-lg hover:bg-primary/90 transition cursor-pointer;
+  }
+
+  .card {
+    @apply bg-bg p-5 rounded-lg shadow-sm mb-6;
+  }
+
+  .heading-1 {
+    @apply text-2xl font-bold mb-2;
+  }
+
+  /* Navbar */
+  .navbar {
+    @apply w-full bg-bg shadow px-6 py-3 flex items-center justify-between;
+  }
+  .logo {
+    @apply flex items-center gap-2;
+  }
+  .cta {
+    @apply flex items-center gap-2 bg-primary hover:bg-primary text-text-white px-4 py-2 rounded-lg text-sm font-medium transition;
+  }
+
+  /* login/register form */
+  .form-wrapper {
+    @apply flex items-center justify-center min-h-screen bg-bg px-4;
+  }
+  .form-container {
+    @apply w-full max-w-md bg-bg-light p-6 rounded-lg shadow-lg;
+  }
+  .form-heading {
+    @apply text-2xl font-bold mb-4 text-center;
+  }
+  .form-desc {
+    @apply text-base text-text-muted text-center mb-4;
+  }
+  .form-label {
+    @apply block text-sm font-medium mb-1;
+  }
+  .form-input {
+    @apply w-full px-4 py-2 ring ring-border rounded-lg focus:outline-none focus:ring-primary focus:ring-2;
+  }
+
+  /* Post card*/
+  .post-header {
+    @apply flex items-center mb-2;
+  }
+  .post-img {
+    @apply w-10 h-10 rounded-full mr-3;
+  }
+  .post-author {
+    @apply font-semibold;
+  }
+  .post-date {
+    @apply text-sm text-text-muted;
+  }
+  .post-text {
+    @apply text-text-muted mb-4;
+  }
+
+  /* Profile Card*/
+  .user-header {
+    @apply flex items-center gap-4 mb-2;
+  }
+  .user-header > img {
+    @apply w-30 h-30 rounded-full;
+  }
+  .profile-name {
+    @apply text-3xl font-bold text-text;
+  }
+  .profile-headline {
+    @apply text-text-muted;
+  }
+  .profile-email {
+    @apply text-sm text-text-muted;
+  }
+}
